@@ -142,7 +142,11 @@ public class SecondaryHDLCDataLink
 
 		// Wait for poll - need an RR with P bit - 1
 		
-		/*Completer cette partie*/
+		String p = "";
+		while(!p.equals("1")){
+			frame = getRRFrame(true);
+			p = frame.substring(5, 5);
+		}
 				
 		// Send the SDU
 		// After each transmission, check for an ACK (RR)
